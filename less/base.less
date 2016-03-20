@@ -1,0 +1,26 @@
+// BASE
+    
+@page {
+    margin: 30px 30px 20px 30px;        // Nook
+}
+
+body {
+    font-size: 100%;
+    line-height: @lineHeight + 0%;      // Since some Reading Systems have crappy defaults
+}
+
+body * {
+    line-height: inherit;           // All elements inherit from **computed** body e.g. 24px
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt {
+    .keep;              // Better pagebreaks management
+    .keep-after;
+    .left
+}

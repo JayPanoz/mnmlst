@@ -1,0 +1,22 @@
+// COMPILE CSS
+
+/*  The MIT License (MIT)
+    Copyright (c) 2016 Jiminy Panoz (Chapal & Panoz)
+    link: https://opensource.org/licenses/MIT            */
+
+
+// Initialize Foundation (unimpacted by cascade/custom)
+@import (reference) 'utilities';
+@import (reference) 'rhythm';
+@import 'reset';
+@import 'base';
+@import 'hyphens';
+
+// Pause Foundation and Inject Custom Styles
+@import 'custom';
+
+// Resume and Finalize Foundation (impacted by cascade/custom)
+@import 'pagebreak';
+@import 'scale';
+@import 'align';
+@import 'fluid';

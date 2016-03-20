@@ -1,0 +1,54 @@
+// UTILITIES
+
+
+// Mixins
+
+.no-indent {
+    text-indent: 0;   
+}
+
+.no-hyphens {                   // Disable hyphens for elements in custom CSS
+    adobe-hyphenate: none;      // Needed because Adobe RMSDK
+    -ms-hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    -epub-hyphens: none;
+    hyphens: none;
+}
+
+.override-link-color(@linkColor) {              // Useful for buttons
+    color: @linkColor;
+    -webkit-text-fill-color: @linkColor;
+}
+
+
+// Generators
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {      // Useful for image grids
+    .col-@{i} {
+        width: (@i * 100% / @n);   
+    }
+    .generate-columns(@n, (@i + 1));
+}
+
+
+// Packages (namespaces)
+
+#prettify {
+    #pretty-hr {         // A slightly better horizontal rule
+        hr {
+            @hrWidth: 20%;
+            width: @hrWidth;
+            margin-left: ((100 - @hrWidth) / 2) + 0%;
+        }
+    }
+
+    #pretty-sup {          // Better vertical alignment for sup and sub
+        sub {
+            vertical-align: -15%;   
+        }
+        sup {
+            vertical-align: 33%;
+        }
+    }
+}
