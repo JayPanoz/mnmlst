@@ -20,7 +20,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 ## the whys
 
-mnmlst was intended as an experiment: creating the most minimalistic eBooks’ CSS that can be. In other words, it is a dead simple stylesheet with which you can achieve “good enough” results. It was partly inspired by [Better Motherfucking Website](http://bettermotherfuckingwebsite.com).
+mnmlst was intended as a 24 hour experiment: creating the most minimalistic eBooks’ CSS that can be. In other words, it is a dead simple stylesheet with which you can achieve “good enough” results. It was partly inspired by [Better Motherfucking Website](http://bettermotherfuckingwebsite.com).
 
 Since I also considered it a means to get myself out of my comfort zone, I decided to change my CSS approach and see what could stick on the wall—if you want to see my usual approach, check [Soma for Ulysses](https://github.com/JayPanoz/Soma).
 
