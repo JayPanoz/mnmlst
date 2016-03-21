@@ -34,21 +34,24 @@
 
 // Packages (namespaces)
 
-#prettify {
-    #pretty-hr {         // A slightly better horizontal rule
-        hr {
-            @hrWidth: 20%;
-            width: @hrWidth;
-            margin-left: ((100 - @hrWidth) / 2) + 0%;
-        }
+#pretty-hr {         // A slightly better horizontal rule
+    hr {
+        @hrWidth: 20%;
+        width: @hrWidth;
+        margin-left: ((100 - @hrWidth) / 2) + 0%;
     }
+}
 
-    #pretty-sup {          // Better vertical alignment for sup and sub
-        sub {
-            vertical-align: -15%;   
-        }
-        sup {
-            vertical-align: 33%;
-        }
+#pretty-sup {          // Better vertical alignment for sup and sub
+    sub {
+        vertical-align: -15%;   
     }
+    sup {
+        vertical-align: 33%;
+    }
+}
+    
+#prettify {
+    #pretty-hr;
+    #pretty-sup;
 }
