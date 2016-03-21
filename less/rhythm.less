@@ -27,7 +27,8 @@
     margin: 0;   
 }
 
-.margin(@nb) {          // We convert left and right to % since em will reflow with font-size
+.margin(@nb)
+  when (@nb > 0) {      // We convert left and right to % since em will reflow with font-size
     margin: ((@nb * (@scale / @computeScale)) + 0em) (@nb * 5%);
 }
 
