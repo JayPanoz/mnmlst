@@ -99,6 +99,6 @@ If you want to add styles in LESS and output them in a custom CSS:
 ## the crap you‘ll have to edit
 
 - The columns generator if you’re using it since there is no `float` and wrap.
-- The top and bottom margins of `hr` (needs `.fs-1` declared) if you’re declaring margins everywhere else to achieve vertical rhythm.
+- The top and bottom margins of `hr` (needs `@computeScale`) if you’re declaring margins everywhere else to achieve vertical rhythm.
 - `fluid.less` if you’ve got portrait images in your eBook.
 - `table`, `pre`, `code` and all the missing stuff that would have bloated my 853 bytes.
