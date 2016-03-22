@@ -21,8 +21,13 @@
     -webkit-text-fill-color: @linkColor;
 }
 
+.width-center(@elWidth) {
+    width: @elWidth + 0%;
+    margin-left: ((100 - @elWidth) / 2) + 0%;
+}
 
-// Generators
+
+// “Generators”
 
 .generate-columns(@n, @i: 1) when (@i =< @n) {      // Useful for image grids
     .col-@{i} {
@@ -36,9 +41,7 @@
 
 #pretty-hr {         // A slightly better horizontal rule
     hr {
-        @hrWidth: 20%;
-        width: @hrWidth;
-        margin-left: ((100 - @hrWidth) / 2) + 0%;
+        .width-center(20);
     }
 }
 
@@ -54,4 +57,21 @@
 #prettify {
     #pretty-hr;
     #pretty-sup;
+}
+
+#columns {
+    .col-wrap {
+        .keep;
+        width: auto;            // So that padding don’t trigger overflow
+    }
+    .generate-columns(4);       // Generate 4 columns (e.g. grid of images)
+    .col-float {
+        display: inline-block;  // We'll need a clearfix so that margins don't collapse after
+    }
+    .col-float > img {
+        width: 100%;
+    }
+    .clear {
+        clear: both;        // Usage: <div class="clear"/> before closing .col-wrap   
+    }
 }

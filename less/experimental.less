@@ -1,0 +1,88 @@
+// Experimental Utilities
+/* 
+   Stuff that may be eventually added to
+   mnmlst provided that it proves useful 
+   and doesn’t bloat both the system and 
+   the CSS output.
+                                        */
+
+
+// Mixins
+
+.border-radius (@radius: 5px) {
+	border-radius: @radius;
+}
+
+.linear-gradient(@origin: left, @start: #f0f0f0, @stop: #8c8b8b) {
+	background-color: @stop;    // fallback if linear-gradient is not supported
+    background-image: -webkit-linear-gradient(@origin, @start, @stop, @start);
+    background-image: linear-gradient(@origin, @start, @stop, @start); 
+}
+
+
+// “Generators”
+
+/* Subtle Color Palette
+   Usage: .generate-palette(#537F84); in custom         */
+
+.generate-palette(@baseColor) {
+    .color-1 {
+        color: lighten(spin(@baseColor, 10), 20%);
+    }
+    .color-2 {
+        color: lighten(spin(@baseColor, 5), 10%);
+    }
+    .color-3 {
+        color: @baseColor;
+    }
+    .color-4 {
+        color: darken(spin(@baseColor, -5), 10%);
+    }
+    .color-5 {
+        color: darken(spin(@baseColor, -10), 20%);
+    }
+}
+
+/* Freeform GRID generator
+   A pseudo-grid allowing the creation of graphic pages     */
+
+.generate-grid(@display: block, @step: 2.5, @n: 10, @i: 1) when (@i =< @n) {
+     .ff_@{display}-@{i} {
+         display: @display;
+         margin-left: (@i * @step) + 0%;
+     }
+     .generate-grid(@display, @step, @n, (@i + 1));
+}
+
+// Packages (namespaces)
+
+#awesome-hr {
+    hr {
+        .width-center(20);      // Define width and center (since auto = 0 in RMSDK)
+        border: none;
+        height: 1px;
+        .linear-gradient();     // generate background from default arguments
+    }   
+}
+
+#freeform {
+    .generate-grid();       // generate grid from default arguments
+    .ff-center {            // so that it can be used with a span in headings
+        display: block;
+        .center;
+    }
+    .ff-right {             // so that it can be used with a span in headings
+        display: block;
+        .right;
+    }
+    .generate-grid(inline-block, 2.5, 5);   // generate grid for inline-block (span)
+    .ff-400 {                               // weight of span.
+        font-weight: 400;   
+    }
+    .ff-700 {
+        font-weight: 700;   
+    }
+    .ff-italic {                            // style of span
+        font-style: italic;   
+    }
+}
