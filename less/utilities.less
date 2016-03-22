@@ -27,16 +27,6 @@
 }
 
 
-// “Generators”
-
-.generate-columns(@n, @i: 1) when (@i =< @n) {      // Useful for image grids
-    .col-@{i} {
-        width: (@i * 100% / @n);   
-    }
-    .generate-columns(@n, (@i + 1));
-}
-
-
 // Packages (namespaces)
 
 #pretty-hr {         // A slightly better horizontal rule
@@ -57,21 +47,4 @@
 #prettify {
     #pretty-hr;
     #pretty-sup;
-}
-
-#columns {
-    .col-wrap {
-        .keep;
-        width: auto;            // So that padding don’t trigger overflow
-    }
-    .generate-columns(4);       // Generate 4 columns (e.g. grid of images)
-    .col-float {
-        display: inline-block;  // We'll need a clearfix so that margins don't collapse after
-    }
-    .col-float > img {
-        width: 100%;
-    }
-    .clear {
-        clear: both;        // Usage: <div class="clear"/> before closing .col-wrap   
-    }
 }

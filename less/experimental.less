@@ -1,6 +1,10 @@
+@import (reference) 'utilities';
+@import (reference) 'pagebreak';
+@import (reference) 'align';
+
 // Experimental Utilities
 /* 
-   Stuff that may be eventually added to
+   Stuff that may eventually be added to
    mnmlst provided that it proves useful 
    and doesn’t bloat both the system and 
    the CSS output.
@@ -43,20 +47,31 @@
     }
 }
 
-/* Freeform GRID generator
+/* Image GRID generator
+   Generating `.col` classes from argument     */
+   
+.generate-columns(@n, @i: 1) when (@i =< @n) {      // Useful for image grids
+    .col-@{i} {
+        width: (@i * 100% / @n);   
+    }
+    .generate-columns(@n, (@i + 1));
+}
+
+/* Freeform System generator
    A pseudo-grid allowing the creation of graphic pages     */
 
-.generate-grid(@display: block, @step: 2.5, @n: 10, @i: 1) when (@i =< @n) {
+.generate-freeform(@display: block, @step: 2.5, @n: 10, @i: 1) when (@i =< @n) {
      .ff_@{display}-@{i} {
          display: @display;
          margin-left: (@i * @step) + 0%;
      }
-     .generate-grid(@display, @step, @n, (@i + 1));
+     .generate-freeform(@display, @step, @n, (@i + 1));
 }
+
 
 // Packages (namespaces)
 
-#awesome-hr {
+#awesome-hr() {
     hr {
         .width-center(20);      // Define width and center (since auto = 0 in RMSDK)
         border: none;
@@ -65,8 +80,8 @@
     }   
 }
 
-#freeform {
-    .generate-grid();       // generate grid from default arguments
+#freeform() {
+    .generate-freeform();       // generate grid from default arguments
     .ff-center {            // so that it can be used with a span in headings
         display: block;
         .center;
@@ -75,7 +90,7 @@
         display: block;
         .right;
     }
-    .generate-grid(inline-block, 2.5, 5);   // generate grid for inline-block (span)
+    .generate-freeform(inline-block, 2.5, 5);   // generate grid for inline-block (span)
     .ff-400 {                               // weight of span.
         font-weight: 400;   
     }
@@ -86,3 +101,32 @@
         font-style: italic;   
     }
 }
+
+#columns() {
+    .col-wrap {
+        .keep;
+        width: auto;            // So that padding don’t trigger overflow
+    }
+    .generate-columns(4);       // Generate 4 columns (e.g. grid of images)
+    .col-float {
+        display: inline-block;  // We'll need a clearfix so that margins don't collapse after
+    }
+    .col-float > img {
+        width: 100%;
+    }
+    .clear {
+        clear: both;        // Usage: <div class="clear"/> before closing .col-wrap   
+    }
+}
+
+
+// Output
+
+.rounded-box {
+    .border-radius(10px);   
+}
+.generate-palette(#537F84);
+
+#awesome-hr;
+#columns;
+#freeform;
