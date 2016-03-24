@@ -1,6 +1,7 @@
 @import (reference) 'utilities';
 @import (reference) 'pagebreak';
 @import (reference) 'align';
+@import (reference) 'rhythm';
 
 // Experimental Utilities
 /* 
@@ -13,21 +14,30 @@
 
 // Mixins
 
-.border-radius (@radius: 5px) {
+.border-radius(@radius: 5px) {
 	border-radius: @radius;
 }
 
 .linear-gradient(@origin: left, @start: #f0f0f0, @stop: #8c8b8b) {
-	background-color: @stop;    // fallback if linear-gradient is not supported
+	background-color: @stop;    /* fallback if linear-gradient is not supported */
     background-image: -webkit-linear-gradient(@origin, @start, @stop, @start);
     background-image: linear-gradient(@origin, @start, @stop, @start); 
+}
+
+.baseline-grid() {
+    .baseline {
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 92%,rgba(0,0,0,0.3) 100%); 
+        background-image: linear-gradient(top, rgba(0,0,0,0) 92%,rgba(0,0,0,0.3) 100%);
+        background-size: 100% (@scale + 0em);       /* repeat on each line */
+        background-position: top -0.45em left 0;    /* sets on real baseline, top might be changed */
+    }
 }
 
 
 // “Generators”
 
-/* Subtle Color Palette
-   Usage: .generate-palette(#537F84); in custom         */
+// Subtle Color Palette
+// Usage: .generate-palette(#537F84); in custom
 
 .generate-palette(@baseColor) {
     .color-1 {
@@ -47,8 +57,8 @@
     }
 }
 
-/* Image GRID generator
-   Generating `.col` classes from argument     */
+// Image GRID generator
+// Generating `.col` classes from argument
    
 .generate-columns(@n, @i: 1) when (@i =< @n) {      // Useful for image grids
     .col-@{i} {
@@ -57,8 +67,8 @@
     .generate-columns(@n, (@i + 1));
 }
 
-/* Freeform System generator
-   A pseudo-grid allowing the creation of graphic pages     */
+// Freeform System generator
+// A pseudo-grid allowing the creation of graphic pages
 
 .generate-freeform(@display: block, @step: 2.5, @n: 10, @i: 1) when (@i =< @n) {
      .ff_@{display}-@{i} {
@@ -81,28 +91,32 @@
 }
 
 #freeform() {
+     /* FREEFORM
+        Usage: titlepage (book, parts, etc.) */
     .generate-freeform();       // generate grid from default arguments
-    .ff-center {            // so that it can be used with a span in headings
+    .ff-center {                /* can be used with a span in headings */
         display: block;
         .center;
     }
-    .ff-right {             // so that it can be used with a span in headings
+    .ff-right {                 /* can be used with a span in headings */
         display: block;
         .right;
     }
     .generate-freeform(inline-block, 2.5, 5);   // generate grid for inline-block (span)
-    .ff-400 {                               // weight of span.
+    .ff-400 {                                   /* weight of span */
         font-weight: 400;   
     }
     .ff-700 {
         font-weight: 700;   
     }
-    .ff-italic {                            // style of span
+    .ff-italic {                                /* style of span */
         font-style: italic;   
     }
 }
 
 #columns() {
+    /*  COLUMNS
+        Usage: Image Grids */
     .col-wrap {
         .keep;
         width: auto;            // So that padding don’t trigger overflow
@@ -114,13 +128,38 @@
     .col-float > img {
         width: 100%;
     }
-    .clear {
-        clear: both;        // Usage: <div class="clear"/> before closing .col-wrap   
+    .clearfix {
+        clear: both;            /* Usage: <div class="clearfix"/> before closing .col-wrap */  
+    }
+}
+
+#bg-modes() {
+    .sepia {
+        background-color: #faf4e8;   
+    }
+    .gray {
+        background-color: #6d6d6f;
+        color: #fcfcfc;
+    }
+    .black {
+        background-color: #171717;
+        color: #fcfcfc;
     }
 }
 
 
+
 // Output
+
+/* Design utils for body
+   Don't forget to get rid of 
+   thoses classes before publishing       */
+   
+#bg-modes;
+.baseline-grid;
+
+
+/* Functional classes */
 
 .rounded-box {
     .border-radius(10px);   
