@@ -4,7 +4,7 @@
    and doesn’t bloat both the system and 
    the CSS output.
                                         */
-                                        
+                    
                                         
 /* Design utils for body
    Don't forget to get rid of 
@@ -36,20 +36,35 @@
 .rounded-box {
   border-radius: 10px;
 }
-.color-1 {
+.subtle-1 {
   color: #89a9b4;
 }
-.color-2 {
+.subtle-2 {
   color: #6996a1;
 }
-.color-3 {
+.subtle-3 {
   color: #537f84;
 }
-.color-4 {
+.subtle-4 {
   color: #3f6465;
 }
-.color-5 {
+.subtle-5 {
   color: #2c4544;
+}
+.comp-1 {
+  color: #a8c5c8;
+}
+.comp-2 {
+  color: #79a6ab;
+}
+.comp-3 {
+  color: #537f84;
+}
+.comp-4 {
+  color: #845853;
+}
+.comp-5 {
+  color: #744e49;
 }
 hr {
   width: 20%;

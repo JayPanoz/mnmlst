@@ -37,23 +37,44 @@
 // “Generators”
 
 // Subtle Color Palette
-// Usage: .generate-palette(#537F84); in custom
+// Usage: .generate-subtle-palette(#537F84); in custom
 
-.generate-palette(@baseColor) {
-    .color-1 {
+.generate-subtle-palette(@baseColor) {
+    .subtle-1 {
         color: lighten(spin(@baseColor, 10), 20%);
     }
-    .color-2 {
+    .subtle-2 {
         color: lighten(spin(@baseColor, 5), 10%);
     }
-    .color-3 {
+    .subtle-3 {
         color: @baseColor;
     }
-    .color-4 {
+    .subtle-4 {
         color: darken(spin(@baseColor, -5), 10%);
     }
-    .color-5 {
+    .subtle-5 {
         color: darken(spin(@baseColor, -10), 20%);
+    }
+}
+
+// Complementary Color Palette
+// Usage: .generate-comp-palette(#537F84); in custom
+
+.generate-comp-palette(@baseColor) {
+    .comp-1 {
+        color: lighten(@baseColor, 30%);
+    }
+    .comp-2 {
+        color: lighten(@baseColor, 15%);;
+    }
+    .comp-3 {
+        color: @baseColor;
+    }
+    .comp-4 {
+        color: spin(@baseColor, 180);
+    }
+    .comp-5 {
+        color: darken(spin(@baseColor, 180), 5%);
     }
 }
 
@@ -164,7 +185,8 @@
 .rounded-box {
     .border-radius(10px);   
 }
-.generate-palette(#537F84);
+.generate-subtle-palette(#537F84);
+.generate-comp-palette(#537F84);
 
 #awesome-hr;
 #columns;

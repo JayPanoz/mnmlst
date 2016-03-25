@@ -25,6 +25,7 @@ From now on, advanced stuff will be added in `experimental.less`, a file living 
 ### Functional classes
 
 1. Subtle Color Palette Generator
-2. Columns Generator for Grids (e.g. image grid)
-3. Freeform System Generator (cf. International Style / Swiss Design posters)
-4. Slightly better than prettier horizontal rule (using linear gradient)
+2. Complementary Color Palette Generator
+3. Columns Generator for Grids (e.g. image grid)
+4. Freeform System Generator (cf. International Style / Swiss Design posters)
+5. Slightly better than prettier horizontal rule (using linear gradient)
