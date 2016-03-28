@@ -2,6 +2,7 @@
 @import (reference) 'pagebreak';
 @import (reference) 'align';
 @import (reference) 'rhythm';
+@import (reference) 'contrast';
 
 // Experimental Utilities
 /* 
@@ -9,7 +10,7 @@
    mnmlst provided that it proves useful 
    and doesn’t bloat both the system and 
    the CSS output.
-                                        */
+                                         */
 
 
 // Mixins
@@ -155,16 +156,19 @@
 }
 
 #bg-modes() {
+    .mint {
+        background-color: @kindleMintBg;   
+    }
     .sepia {
-        background-color: #faf4e8;   
+        background-color: @ibooksSepiaBg;   
     }
     .gray {
-        background-color: #6d6d6f;
-        color: #fcfcfc;
+        background-color: @ibooksGrayBg;
+        color: @ibooksGrayText;
     }
     .black {
-        background-color: #171717;
-        color: #fcfcfc;
+        background-color: @ibooksBlackBg;
+        color: @ibooksBlackText;
     }
 }
 
@@ -191,3 +195,12 @@
 #awesome-hr;
 #columns;
 #freeform;
+
+/* Output contrast.less */
+button {
+    .contrast(red, #F78181);
+    .linear-gradient(top, #F78181, #F78181);
+}
+.check-link-for-ibooks-dark {
+    .contrast(#B40431, @ibooksGrayBg);  
+}

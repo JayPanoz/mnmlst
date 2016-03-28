@@ -3,24 +3,28 @@
    mnmlst provided that it proves useful 
    and doesn’t bloat both the system and 
    the CSS output.
-                                        */
-                    
-                                        
+                                         */
+                                         
+                                         
 /* Design utils for body
    Don't forget to get rid of 
    thoses classes before publishing       */
    
+.mint {
+  background-color: #c5e6ce;
+}
 .sepia {
-  background-color: #faf4e8;
+  background-color: #f8f1e3;
 }
 .gray {
-  background-color: #6d6d6f;
-  color: #fcfcfc;
+  background-color: #5a5a5c;
+  color: #ffffff;
 }
 .black {
-  background-color: #171717;
-  color: #fcfcfc;
+  background-color: #121212;
+  color: #b1b1b1;
 }
+
 .baseline {
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.3) 100%);
   background-image: linear-gradient(top, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.3) 100%);
@@ -76,6 +80,7 @@ hr {
   background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
+
 /*  COLUMNS
         Usage: Image Grids */
 .col-wrap {
@@ -104,6 +109,7 @@ hr {
   clear: both;
   /* Usage: <div class="clearfix"/> before closing .col-wrap */
 }
+
 /* FREEFORM
         Usage: titlepage (book, parts, etc.) */
 .ff_block-1 {
@@ -188,4 +194,19 @@ hr {
 .ff-italic {
   /* style of span */
   font-style: italic;
+}
+
+/* Output contrast.less */
+
+button {
+  color: #ffffff;
+  background-color: #f78181;
+  /* fallback if linear-gradient is not supported */
+  background-image: -webkit-linear-gradient(top, #f78181, #f78181, #f78181);
+  background-image: linear-gradient(top, #f78181, #f78181, #f78181);
+}
+
+.check-link-for-ibooks-dark {
+  color: #ffebf0;
+  background-color: #5a5a5c;
 }

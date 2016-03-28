@@ -1,0 +1,70 @@
+// Color contrast
+// Borrowed from https://gist.github.com/mindblender/9757036
+// Foundation
+// TODO : implement WCAG 2.0
+
+
+// Variables
+
+// iBooks
+@ibooksWhiteBg : #fafbfa;
+@ibooksWhiteText : #000000;
+@ibooksWhiteLink : #406bfb;
+@ibooksSepiaBg : #f8f1e3;
+@ibooksSepiaText : #000000;
+@ibooksSepiaLink : #3f68d4;
+@ibooksGrayBg : #5a5a5c;
+@ibooksGrayText : #ffffff;
+@ibooksGrayLink : #55beff;
+@ibooksBlackBg : #121212;
+@ibooksBlackText : #b1b1b1;
+@ibooksBlackLink : #55beff;
+
+// Kindle
+@kindleWhiteBg : #ffffff;
+@kindleWhiteText : #232323;
+@kindleWhiteLink : #02a5e2;
+@kindleSepiaBg : #e7dec7;
+@kindleSepiaText : #5d4332; 
+@kindleSepiaLink : #02a6e2;
+@kindleMintBg : #c5e6ce;
+@kindleMintText : #3b4c44;
+@kindleMintLink : #0456aa;
+@kindleBlackBg : #121212;
+@kindleBlackText : #a5a5a5;
+@kindleBlackLink : #03a3df;
+
+
+// Mixins
+
+// light text, dark background
+.contrast(@textColor, @bgColor) 
+    when (lightness(@textColor) >= 50%) 
+     and (lightness(@bgColor) < 50%) {
+        color: @textColor;
+        background-color: @bgColor;
+}
+
+// light text, light background
+.contrast(@textColor, @bgColor) 
+    when (lightness(@textColor) >= 50%) 
+     and (lightness(@bgColor) >= 50%) {
+        color: contrast(@textColor, @textColor, lighten(@textColor, 60%));
+        background-color: @bgColor;
+}
+
+// dark text, light background
+.contrast(@textColor, @bgColor) 
+    when (lightness(@textColor) < 50%)
+     and (lightness(@bgColor) >= 50%) {
+        color: @textColor;
+        background-color: @bgColor;
+}
+
+// dark text, dark background
+.contrast(@textColor, @bgColor) 
+    when (lightness(@textColor) < 50%) 
+     and (lightness(@bgColor) < 50%) {
+        color: contrast(@textColor, @textColor, lighten(@textColor, 60%));
+        background-color: @bgColor;
+}
