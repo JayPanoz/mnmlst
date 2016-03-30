@@ -24,7 +24,6 @@
   background-color: #121212;
   color: #b1b1b1;
 }
-
 .baseline {
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.3) 100%);
   background-image: linear-gradient(top, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.3) 100%);
@@ -70,7 +69,14 @@
 .comp-5 {
   color: #744e49;
 }
-hr {
+hr.subtle {
+  width: 20%;
+  margin-left: 40%;
+  border: none;
+  border-top: 1px solid currentColor;
+  opacity: 0.4;
+}
+hr.awesome {
   width: 20%;
   margin-left: 40%;
   border: none;
@@ -197,7 +203,6 @@ hr {
 }
 
 /* Output contrast.less */
-
 button {
   color: #ffffff;
   background-color: #f78181;
@@ -205,7 +210,6 @@ button {
   background-image: -webkit-linear-gradient(top, #f78181, #f78181, #f78181);
   background-image: linear-gradient(top, #f78181, #f78181, #f78181);
 }
-
 .check-link-for-ibooks-dark {
   color: #ffebf0;
   background-color: #5a5a5c;

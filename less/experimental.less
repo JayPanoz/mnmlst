@@ -103,8 +103,17 @@
 
 // Packages (namespaces)
 
+#subtle-hr() {
+    hr.subtle {
+        .width-center(20);
+        border: none;
+        border-top: 1px solid currentColor;
+        opacity: 0.4;
+    }
+}
+
 #awesome-hr() {
-    hr {
+    hr.awesome {
         .width-center(20);      // Define width and center (since auto = 0 in RMSDK)
         border: none;
         height: 1px;
@@ -192,6 +201,7 @@
 .generate-subtle-palette(#537F84);
 .generate-comp-palette(#537F84);
 
+#subtle-hr;
 #awesome-hr;
 #columns;
 #freeform;
