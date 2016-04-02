@@ -6,6 +6,8 @@ It is, **in many ways**, more of a “political statement” on the [current sta
 
 Beware and tamper with mnmlst at your peril.
 
+**Important Note:** this is not the eBook framework you’ve been waiting for. The “real one” is currently being designed and developed based on another approach. Some ideas and components of mnmlst may be borrowed and implemented in this “real one” though. Consequently, you might consider mnmlst as a kind of laboratory and issues you report as feedback impacting design and development of the “real one”.
+
 ## licence 
 
 **The MIT License (MIT)**
