@@ -35,3 +35,17 @@
 .margin(@top, @bottom) {    // Number of lines before and after element, computed in em
     margin: ((@top * (@scale / @computeScale)) + 0em) 0 ((@bottom * (@scale / @computeScale)) + 0em) 0;
 }
+
+.padding(@nb) 
+  when (@nb = 0) {
+    padding: 0;   
+}
+
+.padding(@nb)
+  when (@nb > 0) {
+    padding: ((@nb * (@scale / @computeScale)) + 0em);
+}
+
+.padding(@top, @bottom) {
+    padding: ((@top * (@scale / @computeScale)) + 0em) 0 ((@bottom * (@scale / @computeScale)) + 0em) 0;
+}

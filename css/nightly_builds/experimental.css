@@ -4,12 +4,9 @@
    and doesn’t bloat both the system and 
    the CSS output.
                                          */
-                                         
-                                         
 /* Design utils for body
    Don't forget to get rid of 
    thoses classes before publishing       */
-   
 .mint {
   background-color: #c5e6ce;
 }
@@ -32,11 +29,12 @@
   background-position: top -0.45em left 0;
   /* sets on real baseline, top might be changed */
 }
-
-
 /* Functional classes */
-
 .rounded-box {
+  font-size: 0.9375em;
+  margin: 1.6em 0 1.6em 0;
+  border: 1px solid currentColor;
+  padding: 0.8em;
   border-radius: 10px;
 }
 .subtle-1 {
@@ -86,7 +84,6 @@ hr.awesome {
   background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
-
 /*  COLUMNS
         Usage: Image Grids */
 .col-wrap {
@@ -115,7 +112,6 @@ hr.awesome {
   clear: both;
   /* Usage: <div class="clearfix"/> before closing .col-wrap */
 }
-
 /* FREEFORM
         Usage: titlepage (book, parts, etc.) */
 .ff_block-1 {
@@ -201,7 +197,6 @@ hr.awesome {
   /* style of span */
   font-style: italic;
 }
-
 /* Output contrast.less */
 button {
   color: #ffffff;

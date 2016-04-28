@@ -26,6 +26,10 @@
     margin-left: ((100 - @elWidth) / 2) + 0%;
 }
 
+.bordered(@borderWidth : 1, @boxPadding : 0.5) {
+    border: (@borderWidth + 0px) solid currentColor;
+    .padding(@boxPadding);
+}
 
 // Packages (namespaces)
 

@@ -1,7 +1,8 @@
+@import (reference) 'rhythm';
+@import (reference) 'scale';
 @import (reference) 'utilities';
 @import (reference) 'pagebreak';
 @import (reference) 'align';
-@import (reference) 'rhythm';
 @import (reference) 'contrast';
 
 // Experimental Utilities
@@ -196,6 +197,9 @@
 /* Functional classes */
 
 .rounded-box {
+    .fs-small;
+    .margin(1, 1);
+    .bordered;
     .border-radius(10px);   
 }
 .generate-subtle-palette(#537F84);
