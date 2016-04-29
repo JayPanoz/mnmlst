@@ -21,6 +21,13 @@
     -webkit-text-fill-color: @linkColor;
 }
 
+.underline(@uLine : underline, @uStyle : solid, @uColor : currentColor) {
+    text-decoration: @uLine;
+    -moz-text-decoration: @uLine @uStyle @uColor;
+    -webkit-text-decoration: @uLine @uStyle @uColor;
+    text-decoration: @uLine @uStyle @uColor;
+}
+
 .width-center(@elWidth) {
     width: @elWidth + 0%;
     margin-left: ((100 - @elWidth) / 2) + 0%;
