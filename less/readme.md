@@ -8,8 +8,8 @@ mnmlst’s architecture has been re-designed to bring some order to chaos so tha
 
 By architecture we mean folders: 
 
-- `mnmlst` and `custom` are root; (global output)
-- `rhythm` and `utilities` are “utils” (not output)
+- `mnmlst` and `custom` are root (global output);
+- `rhythm` and `utilities` are “utils” (no output);
 - `base`, `hyphens` and `normalize` are “foundation” (output);
 - `align`, `fluid`, `pagebreak` and `scale` are “functionalCSS” (output);
 - everything optional is “plugins” (optional output or specific CSS).
@@ -124,7 +124,7 @@ There’s a couple of new packages (namespaces) for horizontal rules:
 ## the shit you probably shouldn’t modify
 
 - `base.less`.
-- `reset.less`.
+- `normalize.less`.
 - `rhythm.less` if you can’t dig it.
 
 ## the crap you‘ll have to edit
@@ -143,11 +143,11 @@ Though some mixins have made it into `utilities.less`, mnmlst has been mainly ex
 - `freeform` generates a set of functional classes to achieve swiss style pages (title, part, etc.) – [see this image for previews](http://jiminy.chapalpanoz.com/wp-content/uploads/sites/2/2015/11/freeform-sys.jpg);
 - `helpers` generates helpers/tools in the form of classes you can use while designing your eBook: background modes helps you make sure everything is OK (illustrations with transparent background in night mode, color contrast, etc.), baseline grid helps you achieve vertical rhythm if you do give a shit about that.
 
-Basically, plugins are small snippets taking advantage of functions and arguments to achieve one very specific goal. They are optional in `mnmlst.less` by default and each can be compiled on its own.
+Basically, plugins are small snippets taking advantage of functions and arguments to achieve one very specific goal. They are optional by default in `mnmlst.less` and each can be compiled on its own.
 
 ### how to build plugins
 
-1. all other parts of mnmlst are the core, plugins extend it when needed.
+1. All other parts of mnmlst are the core, plugins extend it when needed.
 2. Keep it simple (KISS) and don’t try to achieve a shitload of different things in one single plugin (a plugin = 1 goal). If the unminified output is less than or equal to 1kb, you’re doing it right.
 3. A plugin **must** either be output from `mnmlst.less` **or** be compiled directly (specific CSS).
 4. Try to keep plugins as independent as possible, don’t use “core variables” when it is not necessary and leverage arguments.
