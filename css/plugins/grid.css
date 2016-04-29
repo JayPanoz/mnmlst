@@ -1,0 +1,36 @@
+/*  COLUMNS
+    Usage: Image Grids */
+
+.col-wrap {
+  page-break-inside: avoid;
+  width: auto;
+}
+
+.col-1 {
+  width: 25%;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.col-3 {
+  width: 75%;
+}
+
+.col-4 {
+  width: 100%;
+}
+
+.col-float {
+  display: inline-block;
+}
+
+.col-float > img {
+  width: 100%;
+}
+
+.clearfix {
+  clear: both;
+  /* Usage: <div class="clearfix"/> before closing .col-wrap */
+}

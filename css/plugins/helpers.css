@@ -1,0 +1,34 @@
+/*  DESIGN HELPERS
+    Stuff you can use while authoring your CSS.
+    Don’t forget to get rid of them before publishing! */
+    
+.mint {
+  background-color: #c5e6ce;
+}
+
+.cyan {
+  background-color: #e5f6f9;
+}
+
+.sepia {
+  background-color: #f8f1e3;
+}
+
+.gray {
+  background-color: #5a5a5c;
+  color: #ffffff;
+}
+
+.black {
+  background-color: #121212;
+  color: #b1b1b1;
+}
+
+.baseline {
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-size: 100% 1.5em;                  /* repeat on each line */
+  background-position: top -0.45em left 0;      /* sets on real baseline, top might be changed */
+}
+
+/* End design helpers */

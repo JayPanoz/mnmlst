@@ -1,0 +1,27 @@
+/* Subtle color palette */
+
+
+// Mixin
+
+.generate-subtle-palette(@baseColor) {
+    .subtle-1 {
+        color: lighten(spin(@baseColor, 10), 20%);
+    }
+    .subtle-2 {
+        color: lighten(spin(@baseColor, 5), 10%);
+    }
+    .subtle-3 {
+        color: @baseColor;
+    }
+    .subtle-4 {
+        color: darken(spin(@baseColor, -5), 10%);
+    }
+    .subtle-5 {
+        color: darken(spin(@baseColor, -10), 20%);
+    }
+}
+
+
+// Output
+
+.generate-subtle-palette(#537F84);

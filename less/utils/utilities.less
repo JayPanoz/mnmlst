@@ -44,12 +44,41 @@
     .padding(@boxPadding);
 }
 
+.border-radius(@radius: 5px) {
+	border-radius: @radius;
+}
+
+.linear-gradient(@origin: left, @start: #f0f0f0, @stop: #8c8b8b) {
+	background-color: @stop;    /* fallback if linear-gradient is not supported */
+    background-image: -webkit-linear-gradient(@origin, @start, @stop, @start);
+    background-image: linear-gradient(@origin, @start, @stop, @start); 
+}
+
+
 // Packages (namespaces)
 
 #pretty-hr {         // A slightly better horizontal rule
     hr {
         .width-center(20);
     }
+}
+
+#subtle-hr() {
+    hr.subtle {
+        .width-center(20);
+        border: none;
+        border-top: 1px solid currentColor;
+        opacity: 0.5;
+    }
+}
+
+#awesome-hr() {
+    hr.awesome {
+        .width-center(20);      // Define width and center (since auto = 0 in RMSDK)
+        border: none;
+        height: 1px;
+        .linear-gradient();     // generate background from default arguments
+    }   
 }
 
 #pretty-sup {          // Better vertical alignment for sup and sub

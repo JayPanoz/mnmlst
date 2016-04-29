@@ -5,18 +5,27 @@
     link: https://opensource.org/licenses/MIT            */
 
 
-// Initialize Foundation (unimpacted by cascade/custom)
-@import (reference) 'rhythm';
-@import (reference) 'utilities';
-@import 'reset';
-@import 'base';
-@import 'hyphens';
+// Start mnmlst engine
+@import (reference) 'utils/rhythm';
+@import (reference) 'utils/utilities';
 
-// Pause Foundation and Inject Custom Styles
+// Build Foundation (unimpacted by cascade/custom)
+@import 'foundation/normalize';
+@import 'foundation/base';
+@import 'foundation/hyphens';
+
+// Inject Custom Styles
 @import 'custom';
 
-// Resume and Finalize Foundation (impacted by cascade/custom)
-@import 'pagebreak';
-@import 'scale';
-@import 'align';
-@import 'fluid';
+// Output functional CSS (impacted by cascade/custom)
+@import 'functionalCSS/pagebreak';
+@import 'functionalCSS/scale';
+@import 'functionalCSS/align';
+@import 'functionalCSS/fluid';
+
+// Connect plugins (uncomment to embed in mnmlst.css or output specific CSS from each plugin)
+// @import (optional) 'plugins/subtle-palette';
+// @import (optional) 'plugins/complementary-palette';
+// @import (optional) 'plugins/grid';
+// @import (optional) 'plugins/freeform';
+// @import (optional) 'plugins/helpers';

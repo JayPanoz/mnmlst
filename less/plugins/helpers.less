@@ -1,8 +1,8 @@
-// Color contrast
-// Borrowed from https://gist.github.com/mindblender/9757036
-// Foundation
-// TODO : implement WCAG 2.0
+/*  DESIGN HELPERS
+    Stuff you can use while authoring your CSS.
+    Don’t forget to get rid of them before publishing! */
 
+@import (reference) '../utils/rhythm';
 
 // Variables
 
@@ -52,36 +52,40 @@
 @koboBlackLink : #1daec7;
 
 
-// Mixins
+// Packages (namespaces)
 
-// light text, dark background
-.contrast(@textColor, @bgColor) 
-    when (lightness(@textColor) >= 50%) 
-     and (lightness(@bgColor) < 50%) {
-        color: @textColor;
-        background-color: @bgColor;
+#bg-modes() {
+    .mint {
+        background-color: @kindleMintBg;   
+    }
+    .cyan {
+        background-color: @koboCyanBg;   
+    }
+    .sepia {
+        background-color: @ibooksSepiaBg;   
+    }
+    .gray {
+        background-color: @ibooksGrayBg;
+        color: @ibooksGrayText;
+    }
+    .black {
+        background-color: @ibooksBlackBg;
+        color: @ibooksBlackText;
+    }
 }
 
-// light text, light background
-.contrast(@textColor, @bgColor) 
-    when (lightness(@textColor) >= 50%) 
-     and (lightness(@bgColor) >= 50%) {
-        color: contrast(@textColor, @textColor, lighten(@textColor, 60%));
-        background-color: @bgColor;
+#baseline-grid() {
+    .baseline {
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 92%,rgba(0,0,0,0.3) 100%); 
+        background-image: linear-gradient(top, rgba(0,0,0,0) 92%,rgba(0,0,0,0.3) 100%);
+        background-size: 100% (@scale + 0em);       /* repeat on each line */
+        background-position: top -0.45em left 0;    /* sets on real baseline, top might be changed */
+    }
 }
 
-// dark text, light background
-.contrast(@textColor, @bgColor) 
-    when (lightness(@textColor) < 50%)
-     and (lightness(@bgColor) >= 50%) {
-        color: @textColor;
-        background-color: @bgColor;
-}
+// Output
 
-// dark text, dark background
-.contrast(@textColor, @bgColor) 
-    when (lightness(@textColor) < 50%) 
-     and (lightness(@bgColor) < 50%) {
-        color: contrast(@textColor, @textColor, lighten(@textColor, 60%));
-        background-color: @bgColor;
-}
+#bg-modes;
+#baseline-grid;
+
+/* End design helpers */
