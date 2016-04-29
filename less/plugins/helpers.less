@@ -1,0 +1,91 @@
+/*  DESIGN HELPERS
+    Stuff you can use while authoring your CSS.
+    Don’t forget to get rid of them before publishing! */
+
+@import (reference) '../utils/rhythm';
+
+// Variables
+
+// iBooks (iOS)
+@ibooksWhiteBg : #fafbfa;
+@ibooksWhiteText : #000000;
+@ibooksWhiteLink : #406bfb;
+@ibooksSepiaBg : #f8f1e3;
+@ibooksSepiaText : #000000;
+@ibooksSepiaLink : #3f68d4;
+@ibooksGrayBg : #5a5a5c;
+@ibooksGrayText : #ffffff;
+@ibooksGrayLink : #55beff;
+@ibooksBlackBg : #121212;
+@ibooksBlackText : #b1b1b1;
+@ibooksBlackLink : #55beff;
+
+// Kindle (Fire)
+@kindleWhiteBg : #ffffff;
+@kindleWhiteText : #232323;
+@kindleWhiteLink : #02a5e2;
+@kindleSepiaBg : #e7dec7;
+@kindleSepiaText : #5d4332; 
+@kindleSepiaLink : #02a6e2;
+@kindleMintBg : #c5e6ce;
+@kindleMintText : #3b4c44;
+@kindleMintLink : #0456aa;
+@kindleBlackBg : #121212;
+@kindleBlackText : #a5a5a5;
+@kindleBlackLink : #03a3df;
+
+// Kobo (iOS)
+@koboWhiteBg : #ffffff;
+@koboWhiteText : #000000;
+@koboWhiteLink : #042eee;
+@koboSepiaBg : #eae4d3;
+@koboSepiaText : #453d2d; 
+@koboSepiaLink : #433ec8;
+@koboCyanBg : #e5f6f9;
+@koboCyanText : #001015;
+@koboCyanLink : #042eeb;
+@koboGrayBg : #323333;
+@koboGrayText : #ededed;
+@koboGrayLink : #1daec7;
+@koboBlackBg : #000000;
+@koboBlackText : #bbbabb;
+@koboBlackLink : #1daec7;
+
+
+// Packages (namespaces)
+
+#bg-modes() {
+    .mint {
+        background-color: @kindleMintBg;   
+    }
+    .cyan {
+        background-color: @koboCyanBg;   
+    }
+    .sepia {
+        background-color: @ibooksSepiaBg;   
+    }
+    .gray {
+        background-color: @ibooksGrayBg;
+        color: @ibooksGrayText;
+    }
+    .black {
+        background-color: @ibooksBlackBg;
+        color: @ibooksBlackText;
+    }
+}
+
+#baseline-grid() {
+    .baseline {
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 92%,rgba(0,0,0,0.3) 100%); 
+        background-image: linear-gradient(top, rgba(0,0,0,0) 92%,rgba(0,0,0,0.3) 100%);
+        background-size: 100% (@scale + 0em);       /* repeat on each line */
+        background-position: top -0.45em left 0;    /* sets on real baseline, top might be changed */
+    }
+}
+
+// Output
+
+#bg-modes;
+#baseline-grid;
+
+/* End design helpers */

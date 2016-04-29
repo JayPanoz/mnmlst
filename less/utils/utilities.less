@@ -1,0 +1,96 @@
+// UTILITIES
+
+
+// Mixins
+
+.no-indent {
+    text-indent: 0;   
+}
+
+.no-hyphens {                   // Disable hyphens for elements in custom CSS
+    adobe-hyphenate: none;      // Needed because Adobe RMSDK
+    -ms-hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    -epub-hyphens: none;
+    hyphens: none;
+}
+
+.override-link-color(@linkColor) {              // Useful for buttons
+    color: @linkColor;
+    -webkit-text-fill-color: @linkColor;
+}
+
+.underline(@uLine : underline, @uStyle : solid, @uColor : currentColor) {
+    text-decoration: @uLine;
+    -moz-text-decoration: @uLine @uStyle @uColor;
+    -webkit-text-decoration: @uLine @uStyle @uColor;
+    text-decoration: @uLine @uStyle @uColor;
+}
+
+.small-caps {
+    text-transform: lowercase;  /* text should be typed in uppercase (RMSDK) */
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+}
+
+.width-center(@elWidth) {
+    width: @elWidth + 0%;
+    margin-left: ((100 - @elWidth) / 2) + 0%;
+}
+
+.bordered(@borderWidth : 1, @boxPadding : 0.5) {
+    border: (@borderWidth + 0px) solid currentColor;
+    .padding(@boxPadding);
+}
+
+.border-radius(@radius: 5px) {
+	border-radius: @radius;
+}
+
+.linear-gradient(@origin: left, @start: #f0f0f0, @stop: #8c8b8b) {
+	background-color: @stop;    /* fallback if linear-gradient is not supported */
+    background-image: -webkit-linear-gradient(@origin, @start, @stop, @start);
+    background-image: linear-gradient(@origin, @start, @stop, @start); 
+}
+
+
+// Packages (namespaces)
+
+#pretty-hr {         // A slightly better horizontal rule
+    hr {
+        .width-center(20);
+    }
+}
+
+#subtle-hr() {
+    hr.subtle {
+        .width-center(20);
+        border: none;
+        border-top: 1px solid currentColor;
+        opacity: 0.5;
+    }
+}
+
+#awesome-hr() {
+    hr.awesome {
+        .width-center(20);      // Define width and center (since auto = 0 in RMSDK)
+        border: none;
+        height: 1px;
+        .linear-gradient();     // generate background from default arguments
+    }   
+}
+
+#pretty-sup {          // Better vertical alignment for sup and sub
+    sub {
+        vertical-align: -15%;   
+    }
+    sup {
+        vertical-align: 33%;
+    }
+}
+    
+#prettify {
+    #pretty-hr;
+    #pretty-sup;
+}

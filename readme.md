@@ -87,3 +87,33 @@ See LESS’ `readme` for further details.
 - A shitload of apps supporting ePub, especially on Android, because they don’t even support HTML & CSS very well—as a reminder, ePub is using these two languages, which makes the claim of supporting ePub a fucking joke in the first place.
 - Web browsers, because they can’t open an ePub file natively.
 - Your refusal of responsibility. 
+
+## changelog
+
+### version 2
+
+CSS is left untouched but plugins for image grids, freeform system and design helpers have been added.
+
+LESS part has been re-organized and extended (utilities + plugins).
+
+- LESS design system is now using folders.
+- Renamed `reset.less` to `normalize.less`.
+- Added `.padding` mixin in `rhythm`.
+- Added `.width-center` mixin computing `margin-left` from argument (`width`) to center blocks.
+- Added `.underline` mixin (text decoration).
+- Added `.small-caps` mixin.
+- Added `.bordered` mixin.
+- Added `.border-radius` mixin.
+- Added `.linear-gradient` mixin.
+- Added “subtle” and “awesome” `hr` (packages/namespaces).
+- Created LESS plugins to generate subtle and complementary color palettes, image grids, freeform system and design helpers.
+
+### version 1.0.1
+
+A patch has been applied to make the LESS’ design system a little less absurd.
+
+- Reorg of readme files.
+- Unlocked “survival edition” of CSS.
+- Updated LESS custom example.
+- Patched LESS rhythm.
+- Patched LESS utilities (pretty packages).

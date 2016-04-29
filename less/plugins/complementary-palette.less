@@ -1,0 +1,26 @@
+/* Complementary Color Palette  */
+
+// Mixin
+
+.generate-comp-palette(@baseColor) {
+    .comp-1 {
+        color: lighten(@baseColor, 30%);
+    }
+    .comp-2 {
+        color: lighten(@baseColor, 15%);;
+    }
+    .comp-3 {
+        color: @baseColor;
+    }
+    .comp-4 {
+        color: spin(@baseColor, 180);
+    }
+    .comp-5 {
+        color: darken(spin(@baseColor, 180), 5%);
+    }
+}
+
+
+// Output
+
+.generate-comp-palette(#537F84);

@@ -1,0 +1,47 @@
+// Freeform System generator
+// A pseudo-grid allowing the creation of graphic pages
+
+@import (reference) '../utils/utilities';
+@import (reference) '../functionalCSS/align';
+
+// Mixin
+
+.generate-freeform(@display: block, @step: 2.5, @n: 10, @i: 1) when (@i =< @n) {
+     .ff_@{display}-@{i} {
+         display: @display;
+         margin-left: (@i * @step) + 0%;
+     }
+     .generate-freeform(@display, @step, @n, (@i + 1));
+}
+
+
+// Package (namespace)
+
+#freeform() {
+     /* FREEFORM
+        Usage: titlepage (book, parts, etc.) */
+    .generate-freeform();       // generate grid from default arguments
+    .ff-center {                /* can be used with a span in headings */
+        display: block;
+        .center;
+    }
+    .ff-right {                 /* can be used with a span in headings */
+        display: block;
+        .right;
+    }
+    .generate-freeform(inline-block, 2.5, 5);   // generate grid for inline-block (span)
+    .ff-400 {                                   /* weight of span */
+        font-weight: 400;   
+    }
+    .ff-700 {
+        font-weight: 700;   
+    }
+    .ff-italic {                                /* style of span */
+        font-style: italic;   
+    }
+}
+
+
+// Output
+
+#freeform;
