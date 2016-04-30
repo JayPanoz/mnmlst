@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>mnmlst by JayPanoz</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/mnmlst.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
@@ -18,95 +18,86 @@
         <h1>mnmlst</h1>
         <p>An existentialist CSS framework for eBooks</p>
 
-        <p class="view"><a href="https://github.com/JayPanoz/mnmlst">View the Project on GitHub <small>JayPanoz/mnmlst</small></a></p>
-
-
         <ul>
           <li><a href="https://github.com/JayPanoz/mnmlst/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/JayPanoz/mnmlst/tarball/master">Download <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/JayPanoz/mnmlst">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
+      
       <section>
         <p>mnmlst (“Minimalist” or “Minimal Stylesheet”) is an existentialist CSS framework for eBooks. It doesn’t really help you, it immerses you in an absurd world in which some RS “!important all the things” and abuse the universal selector to override your styles, <strong>destroying the fundamental concept of cascade in doing so.</strong></p>
 
-<p>Beware and tamper with mnmlst at your peril.</p>
+		<p>Beware and tamper with mnmlst at your peril.</p>
 
-<hr>
+		<hr>
 
-<h2>
-<a id="approach" class="anchor" href="#approach" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>approach</h2>
+		<h2><a id="approach" class="anchor" href="#approach" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>approach</h2>
 
-<ol>
-<li>
-<strong>mnmlst has minimum impact:</strong> it relies on the Reading Systems’ defaults you can’t trust, it only corrects their oversights (e.g. disabling hyphens for headings, resetting HTML5 block elements, applying <code>max-width</code> for images, etc.). </li>
-<li>
-<strong>mnmlst is freaking light:</strong> the minified css is just 853 bytes. You can achieve your custom typography in less than 2 kilobytes (beautified).</li>
-<li>
-<strong>mnmlst is functional:</strong> it follows <a href="https://blog.colepeters.com/building-and-shipping-functional-css/">FCSS principles</a> and provides single-purpose/reusable classes by default, it doesn’t declare styles for elements directly (excepted oversights).</li>
-<li>
-<strong>mnmlst is a toolbox:</strong> the framework was designed using <a href="http://lesscss.org">LESS CSS</a>, it offers multiple tools and can be customized.</li>
-</ol>
+		<ol>
+		  <li><strong>mnmlst has minimum impact:</strong> it relies on the Reading Systems’ defaults you can’t trust, it only corrects their oversights (e.g. disabling hyphens for headings, resetting HTML5 block elements, applying <code>max-width</code> for images, etc.). </li>
+		  <li><strong>mnmlst is freaking light:</strong> the minified css is just 853 bytes. You can achieve your custom typography in less than 2 kilobytes (beautified).</li>
+		  <li><strong>mnmlst is functional:</strong> it follows <a href="https://blog.colepeters.com/building-and-shipping-functional-css/">FCSS principles</a> and provides single-purpose/reusable classes by default, it doesn’t declare styles for elements directly (excepted oversights).</li>
+		  <li><strong>mnmlst is a toolbox:</strong> the framework was designed using <a href="http://lesscss.org">LESS CSS</a>, it offers multiple tools and can be customized.</li>
+		</ol>
 
-<p>Out of the box, mnmlst doesn’t override anything, whether the defaults are pretty good or absolutely.</p>
+		<p>Out of the box, mnmlst doesn’t override anything, whether the defaults are pretty good or absolutely.</p>
 
-<p>Nope, <strong>nothing.</strong> </p>
+		<p>Nope, <strong>nothing.</strong> </p>
 
-<p>Its approach could be abstracted to “If it’s broke beyond repair, don’t try to fix it.” It’s up to you to make use of the single-purpose classes or, should you be a nihilist, just load the stylesheet and claim the job done.</p>
+		<p>Its approach could be abstracted to “If it’s broke beyond repair, don’t try to fix it.” It’s up to you to make use of the single-purpose classes or, should you be a nihilist, just load the stylesheet and claim the job done.</p>
 
-<p>Existentialism at its best.</p>
+		<p>Existentialism at its best.</p>
 
-<hr>
+		<hr>
 
-<h2>
-<a id="typography" class="anchor" href="#typography" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>typography</h2>
+		<h2><a id="typography" class="anchor" href="#typography" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>typography</h2>
 
-<p>mnmlst’s typography is simplistic:</p>
+		<p>mnmlst’s typography is simplistic:</p>
 
-<ol>
-<li>no <code>font-family</code> is declared, the default will be used (either the Reading System’s or the user’s);</li>
-<li>the <code>line-height</code> is declared for <code>body</code> as a <code>%</code> value; it’s like setting a baseline grid in InDesign: all other elements will inherit the <strong>computed</strong> value, as if the correct ratio/em value was automatically recomputed for each element, depending on its <code>font-size</code>);</li>
-<li>a <code>line-height</code> override is automatically pushed when the <code>font-size</code> of the class/element is bigger that the inherited <code>line-height</code>;</li>
-<li>the modular scale is diatonic—cos’, well, it’s been proving its worth for the last 400 years and that speaks volumes.</li>
-<li>pagebreaks and alignments can be managed using functional classes as well.</li>
-</ol>
+		<ol>
+		  <li>no <code>font-family</code> is declared, the default will be used (either the Reading System’s or the user’s);</li>
+		  <li>the <code>line-height</code> is declared for <code>body</code> as a <code>%</code> value; it’s like setting a baseline grid in InDesign: all other elements will inherit the <strong>computed</strong> value, as if the correct ratio/em value was automatically recomputed for each element, depending on its <code>font-size</code>);</li>
+		  <li>a <code>line-height</code> override is automatically pushed when the <code>font-size</code> of the class/element is bigger that the inherited <code>line-height</code>;</li>
+		  <li>the modular scale is diatonic—cos’, well, it’s been proving its worth for the last 400 years and that speaks volumes.</li>
+		  <li>pagebreaks and alignments can be managed using functional classes as well.</li>
+		</ol>
 
-<p>You can obviously build on top of it. Once again, it’s up to you.</p>
+		<p>You can obviously build on top of it. Once again, it’s up to you.</p>
 
-<hr>
+		<hr>
 
-<h2>
-<a id="the-less-design-system" class="anchor" href="#the-less-design-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>the less design system</h2>
+		<h2><a id="the-less-design-system" class="anchor" href="#the-less-design-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>the less design system</h2>
 
-<p>mnmlst might look simplistic at first sight but that’s only because its beauty lies in the LESS folder. </p>
+		<p>mnmlst might look simplistic at first sight but that’s only because its beauty lies in the LESS folder. </p>
 
-<p>In there you’ll find simple but powerful tools to customize the default css, which is actually just a foundation.</p>
+		<p>In there you’ll find simple but powerful tools to customize the default css, which is actually just a foundation.</p>
 
-<ul>
-<li>You can automate vertical rhythm using mixins.</li>
-<li>You can customize typesetting by using any functional class you’ll find in the default CSS and additional utilities (small caps, text decoration, link color, etc.).</li>
-<li>You can build wrappers and apply borders, background color, etc.</li>
-<li>You can embed preset packages (namespaces) for <code>hr</code>, <code>sup</code>, <code>sub</code>, etc.</li>
-<li>You can use plugins to generate image grids, a swiss style freeform system, color palettes and design helpers (reading modes, baseline grid, pagination…).</li>
-</ul>
+		<ul>
+		  <li>You can automate vertical rhythm using mixins.</li>
+		  <li>You can customize typesetting by using any functional class you’ll find in the default CSS and additional utilities (small caps, text decoration, link color, etc.).</li>
+		  <li>You can build wrappers and apply borders, background color, etc.</li>
+		  <li>You can embed preset packages (namespaces) for <code>hr</code>, <code>sup</code>, <code>sub</code>, etc.</li>
+		  <li>You can use plugins to generate image grids, a swiss style freeform system, color palettes and design helpers (reading modes, baseline grid, pagination…).</li>
+		</ul>
 
-<p>All it takes is a basic understanding of the LESS language.</p>
+		<p>All it takes is a basic understanding of the LESS language.</p>
 
-<hr>
+		<hr>
 
-<h2>
-<a id="the-waste-mnmlst-doesnt-support" class="anchor" href="#the-waste-mnmlst-doesnt-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>the waste mnmlst doesn’t support</h2>
+		<h2><a id="the-waste-mnmlst-doesnt-support" class="anchor" href="#the-waste-mnmlst-doesnt-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>the waste mnmlst doesn’t support</h2>
 
-<ul>
-<li>Good Old Kindle Mobi7.</li>
-<li>A shitload of apps supporting ePub, especially on Android, because they don’t even support HTML &amp; CSS very well—as a reminder, ePub is using these two languages, which makes the claim of supporting ePub a fucking joke in the first place.</li>
-<li>Web browsers, because they can’t open an ePub file natively.</li>
-<li>Your refusal of responsibility. </li>
-</ul>
+		<ul>
+		  <li>Good Old Kindle Mobi7.</li>
+		  <li>A shitload of apps supporting ePub, especially on Android, because they don’t even support HTML &amp; CSS very well—as a reminder, ePub is using these two languages, which makes the claim of supporting ePub a fucking joke in the first place.</li>
+		  <li>Web browsers, because they can’t open an ePub file natively.</li>
+		  <li>Your refusal of responsibility. </li>
+		</ul>
       </section>
+      
       <footer>
         <p>This project is maintained by <a href="https://github.com/JayPanoz">JayPanoz</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on GitHub Pages | Built using mnmlst</small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>

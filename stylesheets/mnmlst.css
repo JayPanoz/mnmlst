@@ -1,0 +1,222 @@
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+body {
+  font-family: "Myriad Pro", Seravek, "Segoe UI", Candara, "PT Sans", "Frutiger Neue", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Roboto, sans-serif;
+  font-size: 100%;
+  line-height: 162.5%;
+  background-color: #FEFEFE;
+  padding: 10px;
+  color: #111;
+  text-align: left;
+}
+body * {
+  line-height: inherit;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 38em;
+}
+h1 {
+  font-size: 2em;
+  line-height: 163%;
+  margin: 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 1.08333333em 0 1.08333333em 0;
+}
+h3 {
+  font-size: 1.1875em;
+  margin: 1.36842105em 0 1.36842105em 0;
+}
+h4 {
+  font-size: 1em;
+  margin: 1.625em 0 0em 0;
+}
+p {
+  font-size: 1em;
+  margin: 1.625em 0 0em 0;
+}
+h1 + p {
+  font-size: 1.1875em;
+  margin: 0em 0 2.73684211em 0;
+  color: #999;
+}
+ul,
+ol {
+  font-size: 1em;
+  margin: 1.625em 0 1.625em 0;
+  padding-left: 1em;
+}
+hr {
+  margin: 3.25em 0 3.25em 0;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #8c8b8b;
+  /* fallback if linear-gradient is not supported */
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+sub {
+  vertical-align: -15%;
+}
+sup {
+  vertical-align: 33%;
+}
+a {
+  color: #01A9DB;
+  text-decoration: underline;
+  -moz-text-decoration: underline solid #dadada;
+  -webkit-text-decoration: underline solid #dadada;
+  text-decoration: underline solid #dadada;
+}
+a:hover {
+  color: #0182a8;
+  text-decoration: underline;
+  -moz-text-decoration: underline solid #dadada;
+  -webkit-text-decoration: underline solid #dadada;
+  text-decoration: underline solid #dadada;
+}
+blockquote {
+  font-size: 1em;
+  margin: 1.625em 5%;
+  font-style: italic;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.8125em;
+}
+th {
+  border-bottom: 2px solid currentColor;
+}
+td {
+  border-bottom: 1px solid currentColor;
+}
+code {
+  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  color: #333;
+  font-size: 0.8125em;
+  margin: 0 0.25em;
+  padding: 0.125em 0.25em;
+  border: 1px solid #DADADA;
+}
+pre {
+  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  color: #333;
+  font-size: 0.8125em;
+  margin: 2em 5%;
+  padding: 1em;
+  border: 1px solid #DADADA;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  -webkit-tab-size: 2;
+  -moz-tab-size: 2;
+  -ms-tab-size: 2;
+  tab-size: 2;
+}
+pre > code {
+  border: none;
+}
+small {
+  font-size: 0.8125em;
+}
+header {
+  margin: 0em 0 3.25em 0;
+  padding: 1.625em 0 0em 0;
+}
+header ul {
+  list-style: none;
+  height: 50px;
+  padding: 0;
+  background: #f4f4f4;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  width: 270px;
+  margin: 0 auto;
+}
+header li {
+  width: 89px;
+  float: left;
+  border-right: 1px solid #e0e0e0;
+  height: 50px;
+}
+header li:first-child a {
+  border-radius: 5px 0 0 5px;
+}
+header li:last-child a {
+  border-radius: 0 5px 5px 0;
+}
+header ul a {
+  line-height: 1;
+  font-size: 0.8125em;
+  color: #999;
+  display: block;
+  text-align: center;
+  padding-top: 12px;
+  height: 38px;
+  text-decoration: none;
+}
+header ul a:hover {
+  color: #666;
+  text-decoration: none;
+}
+header ul a:active {
+  background-color: #f0f0f0;
+}
+header ul li + li + li {
+  border-right: none;
+  width: 89px;
+}
+header ul a strong {
+  font-size: 1.1875em;
+  display: block;
+  color: #111;
+}
+footer {
+  padding: 0em 0 1.625em 0;
+  color: #999;
+  text-align: right;
+  text-indent: 0;
+}
+footer p {
+  margin-top: 0;
+}
+footer:before {
+  content: ' ';
+  margin: 3.25em 0 3.25em 0;
+  display: block;
+  height: 1px;
+  background-color: #8c8b8b;
+  /* fallback if linear-gradient is not supported */
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+@media only screen and (max-width: 560px) {
+  hr {
+    margin: 1.625em 0 1.625em 0;
+  }
+  footer:before {
+    margin: 1.625em 0 1.625em 0;
+  }
+}
+img,
+video,
+svg {
+  width: auto;
+  max-width: 100%;
+}

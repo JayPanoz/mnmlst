@@ -1,0 +1,51 @@
+// RHYTHM
+
+@lineHeight : 162.5;              // Percentage = all elements will inherit computed e.g. 24px
+@scale : (@lineHeight / 100);   // Ratio. Needed in case font-size > computed line-height e.g. 28px > 24px
+
+
+// Font size
+
+.font-size(@elFontSize) 
+     when (@elFontSize =< @scale) {     // If font-size < line-height ratio
+        @computeScale: @elFontSize;     // We push that in case .margin() is used
+        font-size: @elFontSize + 0em;
+}
+
+.font-size(@elFontSize)
+     when (@elFontSize > @scale) {          // If font-size > line-height ratio
+        @computeScale: @elFontSize;         // We push that in case .margin() is used
+        font-size: @elFontSize + 0em;
+        line-height: ceil((((@scale * 2) / @elFontSize) * 100) + 0%);   // new line-height in %
+}
+
+
+// Margins
+
+.margin(@nb) 
+  when (@nb = 0) {      // If number of lines is zero
+    margin: 0;   
+}
+
+.margin(@nb)
+  when (@nb > 0) {      // We convert left and right to % since em will reflow with font-size
+    margin: ((@nb * (@scale / @computeScale)) + 0em) (@nb * 5%);
+}
+
+.margin(@top, @bottom) {    // Number of lines before and after element, computed in em
+    margin: ((@top * (@scale / @computeScale)) + 0em) 0 ((@bottom * (@scale / @computeScale)) + 0em) 0;
+}
+
+.padding(@nb) 
+  when (@nb = 0) {
+    padding: 0;   
+}
+
+.padding(@nb)
+  when (@nb > 0) {
+    padding: ((@nb * (@scale / @computeScale)) + 0em);
+}
+
+.padding(@top, @bottom) {
+    padding: ((@top * (@scale / @computeScale)) + 0em) 0 ((@bottom * (@scale / @computeScale)) + 0em) 0;
+}
