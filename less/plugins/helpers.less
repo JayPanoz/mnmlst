@@ -83,9 +83,40 @@
     }
 }
 
+#paginate() {       // Pseudo “paginated content previewer” (iBooks landscape)
+    .paginate {
+    /* Usage: <body class="paginate"> */
+	    width: 1024px;
+	    height: 768px;
+	    margin: 0;
+	    padding: 82px 66px 65px 66px;
+	    overflow-x: auto;
+	    -webkit-column-width: 414px;
+	    -moz-column-width: 414px;
+	    column-width: 414px;
+	    -webkit-column-gap: 64px;
+	    -moz-column-gap: 64px;
+	    column-gap: 64px;
+	    box-sizing: border-box;
+	    -webkit-perspective: 1;     /* fixes some issues in Chrome */
+    }
+    .paginate:after {   // We need that or else no margin-right after last-column…
+	    display: block;
+	    content: ' ';
+	    -webkit-column-break-before: always;
+	    column-break-before: always;
+	    page-break-before: always;
+	    break-before: always;
+	    height: 80%;
+	    width: 2px;
+	    background-color: rgba(0,0,0,0.3);						
+    }
+}
+
 // Output
 
 #bg-modes;
 #baseline-grid;
+#paginate;
 
 /* End design helpers */

@@ -1,7 +1,7 @@
 /*  DESIGN HELPERS
     Stuff you can use while authoring your CSS.
     Don’t forget to get rid of them before publishing! */
-    
+
 .mint {
   background-color: #c5e6ce;
 }
@@ -27,8 +27,36 @@
 .baseline {
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.3) 100%);
   background-image: linear-gradient(top, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-size: 100% 1.5em;                  /* repeat on each line */
-  background-position: top -0.45em left 0;      /* sets on real baseline, top might be changed */
+  background-size: 100% 1.5em;              /* repeat on each line */
+  background-position: top -0.45em left 0;  /* sets on real baseline, top might be changed */
 }
 
+.paginate {
+  /* Usage: <body class="paginate"> */
+  width: 1024px;
+  height: 768px;
+  margin: 0;
+  padding: 82px 66px 65px 66px;
+  overflow-x: auto;
+  -webkit-column-width: 414px;
+  -moz-column-width: 414px;
+  column-width: 414px;
+  -webkit-column-gap: 64px;
+  -moz-column-gap: 64px;
+  column-gap: 64px;
+  box-sizing: border-box;
+  -webkit-perspective: 1;   /* fixes some issues in Chrome */
+}
+
+.paginate:after {
+  display: block;
+  content: ' ';
+  -webkit-column-break-before: always;
+  column-break-before: always;
+  page-break-before: always;
+  break-before: always;
+  height: 80%;
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 /* End design helpers */

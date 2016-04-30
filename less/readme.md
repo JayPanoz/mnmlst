@@ -141,7 +141,7 @@ Though some mixins have made it into `utilities.less`, mnmlst has been mainly ex
 - `complementary-palette` generates a complementary color palette from an argument;
 - `grid` generates columns + wrapper + clearfix for images grids;
 - `freeform` generates a set of functional classes to achieve swiss style pages (title, part, etc.) – [see this image for previews](http://jiminy.chapalpanoz.com/wp-content/uploads/sites/2/2015/11/freeform-sys.jpg);
-- `helpers` generates helpers/tools in the form of classes you can use while designing your eBook: background modes helps you make sure everything is OK (illustrations with transparent background in night mode, color contrast, etc.), baseline grid helps you achieve vertical rhythm if you do give a shit about that.
+- `helpers` generates helpers/tools in the form of classes you can use while designing your eBook: background modes helps you make sure everything is OK (illustrations with transparent background in night mode, color contrast, etc.), baseline grid helps you achieve vertical rhythm if you do give a shit about that, “paginator” helps you preview your design (it is consistent with iBooks on iPad with smallest font-size setting).
 
 Basically, plugins are small snippets taking advantage of functions and arguments to achieve one very specific goal. They are optional by default in `mnmlst.less` and each can be compiled on its own.
 
