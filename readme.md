@@ -90,6 +90,10 @@ See LESS’ `readme` for further details.
 
 ## changelog
 
+### version 2.0.2
+
+- Added “cover” plugin.
+
 ### version 2.0.1
 
 - Added “paginate” design helper.

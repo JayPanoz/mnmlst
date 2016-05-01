@@ -1,0 +1,24 @@
+/* CSS for cover */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+div,
+figure,
+.full-bleed {
+  margin: 0;
+  padding: 0;
+  height: 99%;
+  text-align: center;
+  text-indent: 0;
+}
+img,
+.portrait {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 95vh;
+}

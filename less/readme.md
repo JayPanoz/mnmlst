@@ -137,6 +137,7 @@ There’s a couple of new packages (namespaces) for horizontal rules:
 
 Though some mixins have made it into `utilities.less`, mnmlst has been mainly extended using plugins.
 
+- `cover` generates a stylesheet for cover images (functional classes `.full-bleed` for wrapper and `.portrait` for `img` are created at the same time).
 - `subtle-palette` generates a subtle color palette from an argument;
 - `complementary-palette` generates a complementary color palette from an argument;
 - `grid` generates columns + wrapper + clearfix for images grids;
