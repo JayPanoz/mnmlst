@@ -1,0 +1,51 @@
+// Embedded Fonts
+
+
+// Variables
+
+@sans : Helvetica, Arial, sans-serif;
+@serif : Georgia, serif;
+@humanist : "Myriad Pro", Seravek, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
+@oldstyle : "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
+@monospace : "Courier New", Courier, monospace;
+
+
+// Mixins
+
+.embed-font(@name, @file, @weight : normal, @style : normal, @path : fonts, @format : otf){
+    font-family: "@{name}";
+    src: "../@{path}/@{file}.@{format}";
+    font-weight: @weight;
+    font-style: @style;
+}
+
+.font-stack(@embeddedFont, @stack){
+    font-family: "@{embeddedFont}", @stack;
+}
+
+
+// Output
+
+@font-face {
+    .embed-font(Open Sans, OpenSans-Regular)
+}
+
+@font-face {
+    .embed-font(Open Sans, OpenSans-Italic, normal, italic)
+}
+
+@font-face {
+    .embed-font(Open Sans, OpenSans-Bold, bold)   
+}
+
+@font-face {
+    .embed-font(Open Sans, OpenSans-BoldItalic, bold, italic)   
+}
+
+.example {
+    .font-stack(Open Sans, @humanist);   
+}
+
+.example_2 {
+    font-family: @oldstyle;   
+}
