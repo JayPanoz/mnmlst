@@ -3,6 +3,10 @@
 
 // Variables
 
+@family: Open Sans;     // Default you can override in mixins
+@folder: fonts;         // Default you can override in mixins
+@format: otf;           // Default you can override in mixins
+
 @sans : Helvetica, Arial, sans-serif;
 @serif : Georgia, serif;
 @humanist : "Myriad Pro", Seravek, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
@@ -12,14 +16,14 @@
 
 // Mixins
 
-.embed-font(@name, @file, @weight : normal, @style : normal, @path : fonts, @format : otf){
+.embed-font(@name : @family, @file, @weight : normal, @style : normal, @path : @folder, @ext : @format){
     font-family: "@{name}";
-    src: "../@{path}/@{file}.@{format}";
+    src: "../@{path}/@{file}.@{ext}";
     font-weight: @weight;
     font-style: @style;
 }
 
-.font-stack(@embeddedFont, @stack){
+.font-stack(@stack, @embeddedFont : @family){   // /!\ Reverse order so that family can be default
     font-family: "@{embeddedFont}", @stack;
 }
 
@@ -27,24 +31,24 @@
 // Output
 
 @font-face {
-    .embed-font(Open Sans, OpenSans-Regular)
+    .embed-font(@family, OpenSans-Regular)
 }
 
 @font-face {
-    .embed-font(Open Sans, OpenSans-Italic, normal, italic)
+    .embed-font(@family, OpenSans-Italic, normal, italic)
 }
 
 @font-face {
-    .embed-font(Open Sans, OpenSans-Bold, bold)   
+    .embed-font(@family, OpenSans-Bold, bold)   
 }
 
 @font-face {
-    .embed-font(Open Sans, OpenSans-BoldItalic, bold, italic)   
+    .embed-font(@family, OpenSans-BoldItalic, bold, italic)   
 }
 
 // The following you’d better output in custom
 .example {
-    .font-stack(Open Sans, @humanist);   
+    .font-stack(@humanist);   // Output default = family
 }
 
 .example_2 {
