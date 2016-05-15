@@ -1,0 +1,45 @@
+/*  Center landscape-aspect-ratio image 
+    May be useful for illustrations.
+    Works in flow (no need to put img
+    in its own xhtml file).             */
+
+
+/* Default styles | Fallback */
+
+.h100 {
+  margin: 1.5em 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  text-align: center;
+}
+
+.h100 > img {
+  width: auto;
+  max-width: 100%;
+}
+
+
+/*  Progressive enhancement using @supports. 
+    Getting around Kindle at the same time
+    since it doesn’t support this very well.    */
+    
+@supports (transform: translateY(-50%)) {
+  .h100 {
+    margin: 0;
+    height: 99vh;   /* Preventing blank page after */
+  }
+  
+  .h100 > img {
+    position: relative;
+    top: 50%;                           /* 50% of container `h100` */
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);        /* 50% of img height */
+  }
+  
+/*  Functional class in case the img
+    is not the first element in your xhtml */
+  .pgbk {
+    page-break-before: always;
+    break-before: always;
+  }
+}

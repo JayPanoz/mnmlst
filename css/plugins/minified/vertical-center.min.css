@@ -1,0 +1,1 @@
+.h100{margin:1.5em 0;page-break-inside:avoid;break-inside:avoid;text-align:center}.h100 > img{width:auto;max-width:100%}@supports (transform: translateY(-50%)){.h100 { margin:0;height:99vh}.h100 > img{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.pgbk{page-break-before:always;break-before:always}
