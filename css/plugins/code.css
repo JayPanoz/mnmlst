@@ -1,0 +1,39 @@
+/* Code */
+
+code {
+  font-family: monospace;
+  border: 1px solid #BABABA;
+  padding: 0.125em 0.25em;
+}
+
+pre {
+  counter-reset: line;
+  background-color: #FAFAFA;
+  border: 1px solid currentColor;
+  font-size: 1em;
+  margin: 1.5em 0 1.5em 0;
+  -webkit-tab-size: 2;
+  -moz-tab-size: 2;
+  -ms-tab-size: 2;
+  tab-size: 2;
+}
+
+pre code {
+  counter-increment: line;
+  border: none;
+  padding: 0;
+}
+
+pre code:before {
+  content: counter(line);
+  width: 2em;
+  display: inline-block;
+  text-align: right;
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid currentColor;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

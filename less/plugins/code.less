@@ -1,0 +1,54 @@
+/* Code */
+
+@import (reference) '../functionalCSS/scale';
+@import (reference) '../utils/rhythm';
+
+// Mixins
+
+.select(@select: none) {
+    -webkit-user-select: @select;
+    -moz-user-select: @select;
+    -ms-user-select: @select;
+    user-select: @select;   
+}
+
+.tabs(@tab-size: 2) {
+    -webkit-tab-size: @tab-size;
+    -moz-tab-size: @tab-size; 
+    -ms-tab-size: @tab-size; 
+    tab-size: @tab-size; 
+}
+
+// Output
+
+code {
+    font-family: monospace;
+    border: 1px solid #BABABA;
+    padding: 0.125em 0.25em;
+}
+
+pre {
+   counter-reset: line;
+   background-color: #FAFAFA;
+   border: 1px solid currentColor;
+   .fs-1;
+   .margin(1, 1);
+   .tabs;
+}
+
+pre code {
+   counter-increment: line;
+   border: none;
+   padding: 0;
+}
+
+pre code:before {
+    content: counter(line);
+    width: 2em;
+    display: inline-block;
+    text-align: right;
+    padding-right: 8px;
+    margin-right: 8px;
+    border-right: 1px solid currentColor;
+    .select;
+}
