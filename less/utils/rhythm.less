@@ -37,15 +37,47 @@
 }
 
 .padding(@nb) 
-  when (@nb = 0) {
+   when (@nb = 0) {
     padding: 0;   
 }
 
 .padding(@nb)
-  when (@nb > 0) {
+   when (@nb > 0) {
     padding: ((@nb * (@scale / @computeScale)) + 0em);
 }
 
 .padding(@top, @bottom) {
     padding: ((@top * (@scale / @computeScale)) + 0em) 0 ((@bottom * (@scale / @computeScale)) + 0em) 0;
+}
+
+// Margin + padding in rem
+// Legacy RMSDK treats rem as em so you won't achieve
+// perfect vertical rhythm but who cares about dat evil crap?
+
+.rem-margin(@nb) 
+  when (@nb = 0) {      // If number of lines is zero
+    margin: 0;   
+}
+
+.rem-margin(@nb)
+  when (@nb > 0) {      // We convert left and right to % since rem will reflow with font-size
+    margin: ((@nb * @scale) + 0rem) (@nb * 5%);
+}
+
+.rem-margin(@top, @bottom) {    // Number of lines before and after element, computed in rem
+    margin: ((@top * @scale) + 0rem) 0 ((@bottom * @scale) + 0rem) 0;
+}
+
+.rem-padding(@nb) 
+  when (@nb = 0) {
+    padding: 0;   
+}
+
+.rem-padding(@nb)
+  when (@nb > 0) {
+    padding: ((@nb * @scale) + 0rem);
+}
+
+.rem-padding(@top, @bottom) {
+    padding: ((@top * @scale) + 0rem) 0 ((@bottom * @scale) + 0rem) 0;
 }
