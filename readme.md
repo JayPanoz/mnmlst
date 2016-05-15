@@ -90,6 +90,15 @@ See LESS’ `readme` for further details.
 
 ## changelog
 
+### version 2.1
+
+- Added mixins to compute `margin` and `padding` in `rem`.
+- Added plugin to embed fonts.
+- Added plugin for tables.
+- Added plugin for code.
+- Added plugin to center images vertically.
+- Redesigned “paginate” design helper.
+
 ### version 2.0.2
 
 - Added “cover” plugin.
