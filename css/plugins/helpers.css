@@ -32,8 +32,12 @@
 }
 
 /*  Start Previewer 
-    Don't forget to get rid of dat shit
-    before distributing your fucking file! */   
+        Don't forget to get rid of dat crap
+        before distributing your ePub file!
+        It will crash iBooks and burn your CPU…
+        I’m not kidding. And it's pretty nasty.
+        So don't forget to get rid of it. Thanks!       */
+
 html {
   box-sizing: border-box;
   width: 1024px;
@@ -50,9 +54,11 @@ html {
   column-fill: auto;
   -webkit-perspective: 1;   /* fixes some issues in Chrome */
 }
+
 body {
   margin: 0 5px !important;
 }
+
 html:before {
   box-sizing: border-box;
   content: ' ';
@@ -64,6 +70,7 @@ html:before {
   border: 2px solid #666;
   border-radius: 3px;
 }
+
 body:after {
   display: block;
   content: ' ';
