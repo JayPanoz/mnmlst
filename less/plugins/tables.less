@@ -1,0 +1,40 @@
+/* Tables */
+
+@import (reference) '../utils/rhythm';
+
+// Mixins
+
+.table(@layout : auto, @collapse : collapse){
+    table {
+        margin: (@scale + 0em) auto;
+        max-width: 100%;
+        table-layout: @layout;
+        border-collapse: @collapse;
+        empty-cells: show;
+    }
+}
+
+.cells(@align: left, @thBorder : 2, @tdBorder : 1){
+    th, td {
+        text-align: @align;
+        padding: ((@scale / 2) + 0em) 2%;
+    }
+    @supports (box-sizing: border-box) {
+        th, td {
+            box-sizing: border-box;
+            height: ((@scale * 2) + 0em);
+            padding: (((@scale - (2 / 16)) / 2) + 0em) 2%;
+        }
+    }
+    th {
+        border-bottom: (@thBorder + 0px) solid currentColor;
+    }
+    td {
+        border-bottom: (@tdBorder + 0px) solid currentColor;
+    }
+}
+
+// Output
+
+.table(fixed);
+.cells;

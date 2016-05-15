@@ -1,0 +1,30 @@
+/* Tables */
+
+table {
+  margin: 1.5em auto;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.75em 2%;
+}
+
+@supports (box-sizing: border-box) {
+  th, td {
+    box-sizing: border-box;
+    height: 3em;
+    padding: 0.6875em 2%;
+  }
+}
+
+th {
+  border-bottom: 2px solid currentColor;
+}
+
+td {
+  border-bottom: 1px solid currentColor;
+}
