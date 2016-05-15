@@ -114,7 +114,8 @@ There’s a bunch of new powerful mixins:
 - `.small-caps` (your text should be typed in uppercase though because “absurmsdk”);
 - `.bordered` if you need boxes with borders (includes `padding`);
 - `.border-radius` (because yolo);
-- `.linear-gradient` (because “modern design” + it won’t be overriden in iBooks).
+- `.linear-gradient` (because “modern design” + it won’t be overriden in iBooks);
+- `.rem-margin` and `.rem-padding` (because `rem` FTW).
 
 There’s a couple of new packages (namespaces) for horizontal rules:
 
@@ -138,6 +139,10 @@ There’s a couple of new packages (namespaces) for horizontal rules:
 Though some mixins have made it into `utilities.less`, mnmlst has been mainly extended using plugins.
 
 - `cover` generates a stylesheet for cover images (special plugin which should be compiled as a specific CSS and not embedded in foundation).
+- `tables` generates styles for `table`.
+- `code` generates styles for `pre` and `code`.
+- `embed-fonts` generates `@font-face` on the fly and provides useful eBook-friendly font stacks.
+- `vertical-center` generates styles to center images vertically.
 - `subtle-palette` generates a subtle color palette from an argument;
 - `complementary-palette` generates a complementary color palette from an argument;
 - `grid` generates columns + wrapper + clearfix for images grids;
