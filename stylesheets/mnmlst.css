@@ -56,6 +56,9 @@ ol {
   margin: 1.625em 0 1.625em 0;
   padding-left: 1em;
 }
+ul ul {
+	margin: 0;
+}
 hr {
   margin: 3.25em 0 3.25em 0;
 }
