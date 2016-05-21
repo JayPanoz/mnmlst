@@ -1,0 +1,74 @@
+/* Portrait aspect-ratio images (+ captions) */
+
+.portrait {
+  width: 100%;
+  height: 80%;
+  margin: 1.5em 0;
+  -webkit-column-break-before: auto;
+  page-break-before: auto;
+  break-before: auto;
+  text-align: center;
+}
+
+.portrait > img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.portrait-caption-80 {
+  width: 100%;
+  height: 99%;
+  margin: 1.5em 0;
+  -webkit-column-break-before: always;
+  page-break-before: always;
+  break-before: always;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  text-align: center;
+}
+
+.portrait-caption-80 > img {
+  width: auto;
+  max-width: 100%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.portrait-caption-80 > .caption {
+  /* your styles */
+}
+
+@supports (height: 80vh) {
+  .portrait-caption-80 {
+    min-height: 100vh;
+    margin: 0;
+  }
+  .portrait-caption-80 > img {
+    height: 80vh;
+    max-height: 620px;
+  }
+  .portrait-caption-80 > .caption {
+    /* your styles */
+  }
+}
+
+@supports (page-break-before: always) and (height: calc(98vh - 5em)) {
+  .portrait-caption-80 {
+    min-height: calc(100vh - 0px);
+    margin: 0;
+  }
+  .portrait-caption-80 > img {
+    box-sizing: border-box;
+    min-height: 60vh;
+    height: calc(98vh - 5em);
+    max-height: 620px;
+    padding: 1vh 0;
+  }
+  .portrait-caption-80 > .caption {
+    /* your styles */
+  }
+}
