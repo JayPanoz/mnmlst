@@ -1,0 +1,52 @@
+/* CSS Filters */
+
+.blur(@radius) {
+    filter: blur(@radius);   
+}
+
+.brightness(@bValue) {
+    filter: brightness(@bValue);   
+}
+
+.contrast(@cValue) {
+    filter: contrast(@cValue);
+}
+
+.drop-shadow(@offsetX, @offsetY, @radius, @spread) {
+    filter: drop-shadow(@arguments);
+}
+
+.grayscale(@qty) {
+    filter: grayscale(@qty);   
+}
+
+.hue(@angle) {
+    filter: hue-rotate(@angle);   
+}
+
+.invert(@qty) {
+    filter: invert(@qty);
+}
+
+.opacity(@qty) {
+    filter: opacity(@qty);   
+}
+
+.saturate(@qty) {
+    filter: saturate(@qty);   
+}
+
+.sepia(@qty) {
+    filter: sepia(@qty);
+}
+
+// Output
+.night-mode {
+    .invert(100%);
+}
+.old-book {
+    .sepia(100%);
+}
+.mic-drop {
+    .drop-shadow(5px, 5px, 5px, 10px);   
+}

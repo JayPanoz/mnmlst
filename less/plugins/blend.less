@@ -1,0 +1,41 @@
+/* Blend Modes */
+
+// Vars (if needed)
+
+@mult : multiply;
+@screen : screen;
+@over : overlay;
+@dark : darken;
+@light : ligthen;
+@dodge : color-dodge;
+@burn : color-burn;
+@hard : hard-light;
+@soft : soft-light;
+@diff : difference;
+@exc : exclusion;
+@hue : hue;
+@sat : saturation;
+@color : color;
+@lum : luminosity;
+
+// Mixins
+
+.bg-blend(@img, @color, @mode, @format : jpg) {
+    background-image: url('@{img}.@{format}');
+    background-color: @color;
+    background-blend-mode: @mode;
+}
+
+.blend(@mix) {
+    mix-blend-mode: @mix;   
+}
+
+// Output
+
+.hero-header {
+    .bg-blend(hero, red, @diff);   
+}
+
+.funny-heading {
+    .blend(@mult);   
+}
